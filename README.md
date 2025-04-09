@@ -19,7 +19,7 @@ To install the Terminal Theme Changer, follow the steps below:
 2. Install the package by running:
 
    ```bash
-   sudo dpkg -i terminal-theme-changer-1.0.0_all.deb
+   sudo dpkg -i terminal-theme-changer-deb.deb
    ```
 
 ## After installation, you can run the theme changer script.
