@@ -1,0 +1,7 @@
+Package: terminal-theme-changer
+Version: 1.0.0
+Section: utils
+Priority: optional
+Architecture: all
+Maintainer: belam <belammuia0@gmail.com>
+Description: 🎨 Easily change your Ubuntu terminal theme from a menu-driven script.

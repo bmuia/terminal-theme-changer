@@ -1,0 +1,23 @@
+#!/bin/bash
+
+# Terminal Color Presets
+declare -A themes
+themes["ubuntu"]="\\[\\e[1;35m\\]\\u@\\h:\\[\\e[1;34m\\]\\w\\$ \\[\\e[0m\\]"
+themes["green"]="\\[\\e[1;32m\\]\\u@\\h:\\[\\e[1;33m\\]\\w\\$ \\[\\e[0m\\]"
+themes["matrix"]="\\[\\e[0;32m\\]\\u@matrix:\\[\\e[0;32m\\]\\w\\$ \\[\\e[0m\\]"
+themes["red"]="\\[\\e[1;31m\\]\\u@\\h:\\[\\e[1;34m\\]\\w\\$ \\[\\e[0m\\]"
+
+echo "🎨 Choose a theme:"
+select theme in "${!themes[@]}"; do
+  if [[ -n "${themes[$theme]}" ]]; then
+    echo "Applying theme: $theme"
+    echo "" >> ~/.bashrc
+    echo "# Added by terminal-theme-changer" >> ~/.bashrc
+    echo "export PS1='${themes[$theme]}'" >> ~/.bashrc
+    source ~/.bashrc
+    echo "✅ Theme '$theme' applied and saved!"
+    break
+  else
+    echo "❌ Invalid choice. Try again."
+  fi
+done
